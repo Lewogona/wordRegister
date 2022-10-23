@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="totals">
     <label for="totalDay" size="lg">Total mots du jour :</label>
     <b-form-input id="totalDay" value=" /1 666" readonly></b-form-input>
     <label for="totalNano" size="lg">Total mots du NaNoWriMo :</label>
@@ -18,14 +18,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-input {
+#totalDay, #totalNano {
   width: 200px;
   margin: auto;
   text-align: center;
   margin-bottom: 10px;
 }
 
-div {
+#totals {
   margin-top: 20px;
 }
 </style>
