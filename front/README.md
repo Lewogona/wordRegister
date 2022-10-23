@@ -1,4 +1,4 @@
-# word-register
+# front
 
 ## Project setup
 ```
