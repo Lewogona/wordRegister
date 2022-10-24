@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="primary">
+  <b-navbar toggleable="md" type="dark" variant="primary">
     <b-navbar-brand href="#/">Compteur de mots</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

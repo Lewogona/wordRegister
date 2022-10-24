@@ -39,4 +39,8 @@ nav {
   padding: 30px;
   font-weight: bold;
 }
+
+input:read-only {
+  background-color: rgba(180, 150, 170, 0.1)!important;
+}
 </style>
