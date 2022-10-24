@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="primary">
-    <b-navbar-brand href="#">Compteur de mots</b-navbar-brand>
+    <b-navbar-brand href="#/">Compteur de mots</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -10,9 +10,7 @@
         <b-nav-item href="#/nanographics">Graphiques</b-nav-item>
       </b-navbar-nav>
 
-      <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-
         <b-nav-item-dropdown text="Actions" right>
           <b-dropdown-item href="#/addsession">Ajouter session</b-dropdown-item>
           <b-dropdown-item href="#/addproject">Ajouter projet</b-dropdown-item>
