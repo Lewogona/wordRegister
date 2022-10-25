@@ -7,6 +7,7 @@ import AddEvent from '../views/AddEvent'
 import NanoStatistics from '../views/NanoStatistics'
 import AllProjects from '../views/AllProjects'
 import NanoGraphics from '../views/NanoGraphics'
+import ProjectPage from '../views/ProjectPage'
 
 Vue.use(VueRouter)
 
@@ -53,7 +54,12 @@ const routes = [
     path: '/nanographics',
     name: 'nanographics',
     component: NanoGraphics
-  }
+  },  
+  {
+    path: '/project',
+    name: 'project',
+    component: ProjectPage
+  },
 ]
 
 const router = new VueRouter({
