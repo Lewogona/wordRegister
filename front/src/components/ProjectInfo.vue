@@ -11,6 +11,9 @@
         Chapitres finis : 12
       </b-card-text>
     </b-card>
+    <div id="statistiques" class="project_card">
+
+    </div>
   </div>
 </template>
     
