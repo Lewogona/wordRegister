@@ -16,6 +16,17 @@ html, body {
   background-color: rgba(180, 150, 170, 0.1);
 }
 
+body, div, h1, h2, h3, h4, p, img, ul, li, header, footer, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -42,5 +53,9 @@ nav {
 
 input:read-only {
   background-color: rgba(180, 150, 170, 0.1)!important;
+}
+
+.card-body {
+  padding: 10px;
 }
 </style>

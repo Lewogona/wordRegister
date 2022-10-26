@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="md" type="dark" variant="primary">
+  <b-navbar id="head-page" toggleable="md" type="dark" variant="primary">
     <b-navbar-brand href="#/">Compteur de mots</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -42,4 +42,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+#head-page {
+  margin-bottom: 15px;
+}
 </style>
