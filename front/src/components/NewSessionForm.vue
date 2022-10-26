@@ -18,7 +18,7 @@
       <b-form-group label="Mots écrits durant cette session :">
         <b-form-input class="form" readonly></b-form-input>
       </b-form-group>
-      <b-text id="congratz">Félicitations !</b-text>
+      <p id="congratz">Félicitations !</p>
     </div>
   </template>
   

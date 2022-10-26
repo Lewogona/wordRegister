@@ -15,7 +15,7 @@
         </b-form-group>
         <b-button pill variant="primary">Valider</b-button>
       </b-form>
-      <b-text id="be-brave">Courage !</b-text>
+      <p id="be-brave">Courage !</p>
     </div>
   </template>
   
