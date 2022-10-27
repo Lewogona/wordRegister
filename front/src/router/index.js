@@ -8,6 +8,7 @@ import NanoStatistics from '../views/NanoStatistics'
 import AllProjects from '../views/AllProjects'
 import NanoGraphics from '../views/NanoGraphics'
 import ProjectPage from '../views/ProjectPage'
+import UserInfo from '../views/UserInfo'
 
 Vue.use(VueRouter)
 
@@ -59,6 +60,11 @@ const routes = [
     path: '/project',
     name: 'project',
     component: ProjectPage
+  },
+  {
+    path: '/userinfo',
+    name: 'userinfo',
+    component: UserInfo
   },
 ]
 

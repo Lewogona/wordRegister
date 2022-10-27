@@ -58,4 +58,8 @@ input:read-only {
 .card-body {
   padding: 10px;
 }
+
+.black {
+  color: black;
+}
 </style>
