@@ -2,13 +2,13 @@
     <div>
       <b-form>
         <b-form-group label="Quel projet ?">
-          <b-form-select class="form" v-model="selected" :options="projets"></b-form-select>  
+          <b-form-select class="form" :options="projects"></b-form-select>  
         </b-form-group>
         <b-form-group label="Quel type d'évènement ?">
-          <b-form-select class="form" v-model="selected" :options="events"></b-form-select>
+          <b-form-select class="form" :options="events"></b-form-select>
         </b-form-group>
-        <b-form-group label="Nouveau chapitre ?">
-          <b-form-radio-group id="newchap" v-model="selected" :options="newchap" name="newchap"></b-form-radio-group>
+        <b-form-group label="Nouveau fichier ?">
+          <b-form-radio-group name="newchap" :options="newchap" buttons button-variant="outline-primary" size="lg"></b-form-radio-group>
         </b-form-group>
         <b-form-group label="Nombre total de mots dans le fichier">
           <b-form-input class="form"></b-form-input>
@@ -25,28 +25,20 @@
   <script>
   export default {
     name: 'NewSessionForm',
+    props: {
+      projects: Array,
+      events: Array,
+      newchap: Array,
+    },
     data() {
       return {
-        selected: null,
-        projets: [
-          { value: null, text: ' ' },
-          { value: 'a', text: '[Roman] Cette fille' },
-          { value: 'b', text: '[Roman] Ossaïnha' },
-          { value: 'c', text: '[Nouvelle] À travers la fenêtre'},
-          { value: 'd', text: 'Autre...', disabled: true }
-        ],
-        events: [
-          { value: null, text: ' ' },
-          { value: 'a', text: 'Session normale' },
-          { value: 'b', text: 'Word war 15' },
-          { value: 'c', text: 'Word war 30' },
-          { value: 'd', text: 'Autre...', disabled: true }
-        ],
-        newchap: [
-          { text: 'Oui' },
-          { text: 'Non' },
-        ]
+        // projects: [],
+        // events: [],
+        // newchap: [],
       }
+    },
+    mounted() {
+      console.log(this.projects)
     }
   }
   </script>

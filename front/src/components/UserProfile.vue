@@ -10,7 +10,7 @@
           <avatar 
             :username="`Lewogona Tran`" 
             background-color="purple" 
-            :size="200" 
+            :size="150" 
             :rounded="false" 
             color="white"
             class="mx-auto pointer"
@@ -28,9 +28,9 @@
           </label> -->
         </b-col>
         <b-col md="7" lg="8" xl="9">
-          <b-card-text class="my-3 black">Prénom : Lewogona</b-card-text>
-          <b-card-text class="my-3 black">Nom : </b-card-text>
-          <b-card-text class="my-3 black">Email : </b-card-text>
+          <b-card-text class="my-3 black">Pseudo : {{ pseudo }}</b-card-text>
+          <b-card-text class="my-3 black">Nombre de projets : {{ projectNumber }}</b-card-text>
+          <b-card-text class="my-3 black">Nombre total de mots : {{ totalWord }}</b-card-text>
         </b-col>
       </b-row>
     </b-card>
@@ -44,6 +44,11 @@
     name: 'UserProfile',
     components: {
       Avatar,
+    },
+    props: {
+      pseudo: String,
+      projectNumber: Number,
+      totalWord: Number,
     },
     data() {
       return {

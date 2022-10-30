@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
-    <UserProfile />
+    <UserProfile :pseudo="pseudo" :projectNumber="projectNumber" :totalWord="totalWord" />
   </div>
 </template>
 
@@ -15,6 +15,13 @@ export default {
   components: {
     PageHeader,
     UserProfile,
-  }
+  },
+  data() {
+    return {
+      pseudo: 'Lewogona',
+      projectNumber: 3,
+      totalWord: 12654,
+    }
+  },
 }
 </script>

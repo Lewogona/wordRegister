@@ -2,13 +2,13 @@
     <div>
       <b-form>
         <b-form-group label="Quel type de projet ?">
-          <b-form-select class="form" v-model="selected" :options="newprojets"></b-form-select>  
+          <b-form-select class="form" :options="newprojets"></b-form-select>  
         </b-form-group>
         <b-form-group label="Titre :">
           <b-form-input class="form"></b-form-input>
         </b-form-group>
         <b-form-group label="Y aura-t-il des chapitres ? (différents fichiers)">
-          <b-form-radio-group id="chap" v-model="selected" :options="chap" name="chap"></b-form-radio-group>
+          <b-form-radio-group name="chap" :options="chap" buttons button-variant="outline-primary" size="lg"></b-form-radio-group>
         </b-form-group>
         <b-form-group label="Ajouter une description ?">
           <b-form-textarea class="form"></b-form-textarea>
@@ -24,7 +24,6 @@
     name: 'NewProjectForm',
     data() {
       return {
-        selected: null,
         newprojets: [
           { value: null, text: ' ' },
           { value: 'a', text: 'Roman' },
@@ -34,9 +33,9 @@
           { value: 'e', text: 'Autre...', disabled: true }
         ],
         chap: [
-          { text: 'Oui' },
-          { text: 'Non' },
-        ]
+          { text: 'Oui', value: 'oui' },
+          { text: 'Non', value: 'non' },
+        ],
       }
     }
   }

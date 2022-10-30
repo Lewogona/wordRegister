@@ -23,7 +23,7 @@
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown text="Mon compte" right>
-          <b-dropdown-item href="#/userinfo">Profile</b-dropdown-item>
+          <b-dropdown-item href="#/userpage">Profile</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
