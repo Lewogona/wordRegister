@@ -7,8 +7,8 @@ const userCtrl = require("../controllers/user")
 
 // router.get('/', auth, userCtrl.getAllUsers);
 // router.get("/:id", auth, userCtrl.getOneUser);
-// router.post('/signup', userCtrl.signup);
-// router.post('/login', userCtrl.login);
+router.post('/signup', userCtrl.signup);
+router.post('/login', userCtrl.login);
 // router.put('/:id', auth, multer, userCtrl.modifyProfile);
 // router.delete("/:id", auth, multer, userCtrl.deleteUser);
 

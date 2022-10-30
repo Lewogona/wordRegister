@@ -1,32 +1,44 @@
 <template>
-    <div class="home">
-      <PageHeader />
-      <ProjectInfo :title="title" :projectType="projectType" :description="description" :finishedChapter="finishedChapter" />
-      <ProjectStatistics />
-    </div>
-  </template>
+  <div class="home">
+    <PageHeader />
+    <ProjectInfo :title="title" :projectType="projectType" :description="description" :finishedChapter="finishedChapter" />
+    <ProjectStatistics />
+  </div>
+</template>
   
-  <script>
-  // @ is an alias to /src
-  import PageHeader from '@/components/PageHeader.vue'
-  import ProjectInfo from '@/components/ProjectInfo.vue'
-  import ProjectStatistics from '@/components/ProjectStatistics.vue'
-  
-  export default {
-    name: 'AddProject',
-    components: {
-      PageHeader,
-      ProjectInfo,
-      ProjectStatistics,
-    },
-    data() {
-      return {
-        title: 'Cette fille',
-        projectType: 'Roman',
-        description: 'Description, thèmes, logline, blabla...',
-        finishedChapter: 12,
-      }
-    },
-  }
+<script>
+// @ is an alias to /src
+import PageHeader from '@/components/PageHeader.vue'
+import ProjectInfo from '@/components/ProjectInfo.vue'
+import ProjectStatistics from '@/components/ProjectStatistics.vue'
+
+export default {
+  name: 'AddProject',
+  components: {
+    PageHeader,
+    ProjectInfo,
+    ProjectStatistics,
+  },
+  data() {
+    return {
+      title: 'Cette fille',
+      projectType: 'Roman',
+      description: 'Description, thèmes, logline, blabla...',
+      finishedChapter: 12,
+    }
+  },
+  mounted() {
+    // The user has to be logged in to access this page
+    if (!this.currentUser) {
+      this.$router.push('/login');
+    }
+  },
+  computed: {
+    // Retrieve the user with their info
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+  },
+}
   </script>
   

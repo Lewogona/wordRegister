@@ -8,7 +8,7 @@ exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
       .then(hash => {
         const user = new User({
-          email: req.body.email,
+          pseudo: req.body.pseudo,
           password: hash
         });
         // Save new user in database
@@ -22,7 +22,7 @@ exports.signup = (req, res, next) => {
 // Login
 exports.login = (req, res, next) => {
     // Find if user exists
-    User.findOne({ email: req.body.email })
+    User.findOne({ pseudo: req.body.pseudo })
         .then(user => {
         if (!user) {
             return res.status(401).json({ error: 'Utilisateur non trouvé !' });

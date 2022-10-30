@@ -23,8 +23,8 @@
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown text="Mon compte" right>
-          <b-dropdown-item href="#/userpage">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item href="#/userpage">Profil</b-dropdown-item>
+          <b-dropdown-item @click="logOut">Déconnexion</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -34,8 +34,18 @@
 <script>
 export default {
   name: 'PageHeader',
-  props: {
-
+  computed: {
+    // Retrieve the user with their info
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+    },
+  methods: {
+    // log out and redirect to the login page
+    logOut() {
+      this.$store.dispatch('auth/logout');
+      this.$router.push('/login');
+    }
   }
 }
 </script>

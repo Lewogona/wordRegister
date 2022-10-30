@@ -7,7 +7,7 @@ const userRoutes = require("./routes/users");
 
 const app = express();
 
-mongoose.connect('mongodb+srv://Lewogona:18PppPcUISOTDra9@cluster0.8hrnosl.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGODB_URI,
     { useNewUrlParser: true,
         useUnifiedTopology: true })
     .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -24,6 +24,6 @@ app.use((req, res, next) => {
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
-app.use("/api/auth", userRoutes);
+app.use("/users", userRoutes);
 
 module.exports = app;

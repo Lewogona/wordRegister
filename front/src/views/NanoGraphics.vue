@@ -12,6 +12,18 @@ export default {
   name: 'NanoGraphics',
   components: {
     PageHeader,
-  }
+  },
+  mounted() {
+    // The user has to be logged in to access this page
+    if (!this.currentUser) {
+      this.$router.push('/login');
+    }
+  },
+  computed: {
+    // Retrieve the user with their info
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+  },
 }
 </script>
