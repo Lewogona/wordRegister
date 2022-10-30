@@ -1,29 +1,29 @@
 <template>
   <div>
     <div class="row">
-      <b-link href="#" class="menu-elements">
+      <b-link href="#/addsession" class="menu-elements">
         <b-icon-file-plus-fill font-scale="5" variant="primary"></b-icon-file-plus-fill>
         <p>Ajouter session</p>
       </b-link>
-      <b-link href="#" class="menu-elements">
+      <b-link href="#/addproject" class="menu-elements">
         <b-icon-folder-plus font-scale="5" variant="primary"></b-icon-folder-plus>
         <p>Ajouter projet</p>
       </b-link>
-      <b-link href="#" class="menu-elements">
+      <b-link href="#/addevent" class="menu-elements">
         <b-icon-calendar2-plus-fill font-scale="5" variant="primary"></b-icon-calendar2-plus-fill>
         <p>Ajouter évènement</p>
       </b-link>
     </div>
     <div class="row">
-      <b-link href="#" class="menu-elements">
+      <b-link href="#/nanostatistics" class="menu-elements">
         <b-icon-bar-chart-line-fill font-scale="5" variant="primary"></b-icon-bar-chart-line-fill>
         <p>Statistiques</p>
       </b-link>
-      <b-link href="#" class="menu-elements">
+      <b-link href="#/allprojects" class="menu-elements">
         <b-icon-book font-scale="5" variant="primary"></b-icon-book>
         <p>Projets</p>
       </b-link>
-      <b-link href="#" class="menu-elements">
+      <b-link href="#/nanographics" class="menu-elements">
         <b-icon-pie-chart-fill font-scale="5" variant="primary"></b-icon-pie-chart-fill>
         <p>Graphiques</p>
       </b-link>
@@ -47,6 +47,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: nowrap;
   margin: 0;
 }
 

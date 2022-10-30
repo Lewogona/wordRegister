@@ -19,7 +19,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #totalDay, #totalNano {
-  width: 200px;
+  width: 300px;
   margin: auto;
   text-align: center;
   margin-bottom: 10px;
