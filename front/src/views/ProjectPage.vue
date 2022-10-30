@@ -1,7 +1,7 @@
 <template>
     <div class="home">
       <PageHeader />
-      <ProjectInfo />
+      <ProjectInfo :projects="projects" :events="events" :newchap="newchap" />
     </div>
   </template>
   
@@ -15,7 +15,12 @@
     components: {
       PageHeader,
       ProjectInfo,
-    }
+    },
+    data() {
+      return {
+      
+      }
+    },
   }
   </script>
   
