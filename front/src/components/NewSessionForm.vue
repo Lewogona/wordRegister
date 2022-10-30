@@ -13,16 +13,18 @@
         <b-form-group label="Nombre total de mots dans le fichier">
           <b-form-input class="form"></b-form-input>
         </b-form-group>
-        <b-button pill variant="primary">Valider</b-button>
+        <b-button type="submit" variant="primary">Valider</b-button>
       </b-form>
       <b-form-group label="Mots écrits durant cette session :">
         <b-form-input class="form" readonly></b-form-input>
       </b-form-group>
-      <p id="congratz">Félicitations !</p>
+      <p id="congratz" v-if="submitted">Félicitations !</p>
     </div>
   </template>
   
   <script>
+  import axios from "../services/axios-service"
+
   export default {
     name: 'NewSessionForm',
     props: {
@@ -32,8 +34,35 @@
     },
     data() {
       return {
+        submitted: false,
       }
     },
+    computed: {
+      // Retrieve the user with their info
+      currentUser() {
+        return this.$store.state.auth.user;
+      }
+    },
+    methods: {
+      //
+      redirection() {
+        this.$router.push("/")
+      },
+      async sendProject() {
+        this.submitted = true;
+        await axios.post("projects/", {
+          // userId: this.currentUser.userId,
+          // title: this.title,
+          // type: this.type,
+          // chapter: this.chapter,
+          // description: this.description,
+          // genre: this.genre,
+          // theme: this.theme,
+          // logline: this.logline
+        })
+        setTimeout(this.redirection, 1000)
+      }
+    }
   }
   </script>
   

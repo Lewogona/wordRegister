@@ -20,15 +20,15 @@ export default {
     return {
       newproject: [
           { value: null, text: ' ' },
-          { value: 'a', text: 'Roman' },
-          { value: 'b', text: 'Nouvelle' },
-          { value: 'c', text: 'Scénario'},
-          { value: 'd', text: 'Chanson'},
+          { value: 'roman', text: 'Roman' },
+          { value: 'nouvelle', text: 'Nouvelle' },
+          { value: 'scenario', text: 'Scénario'},
+          { value: 'chanson', text: 'Chanson'},
           { value: 'e', text: 'Autre...', disabled: true }
         ],
         chap: [
-          { text: 'Oui', value: 'oui' },
-          { text: 'Non', value: 'non' },
+          { text: 'Oui', value: true },
+          { text: 'Non', value: false },
         ],
     }
   },
