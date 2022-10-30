@@ -1,28 +1,40 @@
 <template>
   <div>
-    <b-card title="Cette fille" tag="article" class="project_card">
+    <b-card :title="title" tag="article" class="project_card">
       <b-card-text>
-        Type de projet : Roman
+        Type de projet : {{ projectType }}
       </b-card-text>
       <b-card-text>
-        Description du roman, thèmes, logline, ...
+        {{ description }}
       </b-card-text>      
-      <b-card-text>
-        Chapitres finis : 12
+      <b-card-text v-if="displayOnProjectPage">
+        Chapitres finis : {{ finishedChapter }}
       </b-card-text>
+      <b-button href="#/project" v-if="displayOnAllProject" variant="primary" size="sm" class="button_card stretched-link">Plus de détails</b-button>
     </b-card>
-    <div id="statistiques" class="project_card">
-
-    </div>
   </div>
 </template>
     
 <script>
   export default {
     name: 'ProjectInfo',
+    props: {
+      title: String,
+      projectType: String,
+      description: String,
+      finishedChapter: Number,
+    },
     data() {
       return {
       }
+    },
+    computed: {
+      displayOnProjectPage() {
+        return !["/allprojects"].includes(this.$router.currentRoute.path)
+      },
+      displayOnAllProject() {
+        return ["/allprojects"].includes(this.$router.currentRoute.path)
+      },
     }
   }
 </script>

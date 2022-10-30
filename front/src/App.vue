@@ -7,6 +7,7 @@
 <style lang="scss">
 $primary: rgb(88, 44, 88);
 $red: rgb(150, 6, 6);
+$purple: rgb(163, 144, 163);
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../node_modules/bootstrap-vue/src/index.scss';
@@ -41,9 +42,9 @@ a {
     }
 }
 
-a {
+a:hover.disabled {
   text-decoration: none;
-  color: black;
+  cursor: auto;
 }
 
 nav {

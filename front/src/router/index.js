@@ -9,6 +9,8 @@ import AllProjects from '../views/AllProjects'
 import NanoGraphics from '../views/NanoGraphics'
 import ProjectPage from '../views/ProjectPage'
 import UserPage from '../views/UserPage'
+import LoginPage from '../views/LoginPage'
+import SignupPage from '../views/SignupPage'
 
 Vue.use(VueRouter)
 
@@ -17,6 +19,16 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/login',
+    name: 'home',
+    component: LoginPage
+  },
+  {
+    path: '/signup',
+    name: 'home',
+    component: SignupPage
   },
   {
     path: '/about',

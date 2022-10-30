@@ -7,18 +7,18 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#/">Accueil</b-nav-item>
-        <b-nav-item href="#/nanographics">Graphiques</b-nav-item>
+        <b-nav-item href="#/nanographics" disabled>Graphiques</b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
         <b-nav-item-dropdown text="Actions" right>
           <b-dropdown-item href="#/addsession">Ajouter session</b-dropdown-item>
           <b-dropdown-item href="#/addproject">Ajouter projet</b-dropdown-item>
-          <b-dropdown-item href="#/addevent">Ajouter évènement</b-dropdown-item>
+          <b-dropdown-item href="#/addevent" disabled>Ajouter évènement</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown text="Infos" right>
-          <b-dropdown-item href="#/nanostatistics">Statistiques</b-dropdown-item>
+          <b-dropdown-item href="#/nanostatistics" disabled>Statistiques</b-dropdown-item>
           <b-dropdown-item href="#/allprojects">Projets</b-dropdown-item>
         </b-nav-item-dropdown>
 

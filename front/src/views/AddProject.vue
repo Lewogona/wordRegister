@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
-    <NewProjectForm />
+    <NewProjectForm :newproject="newproject" :chap="chap" />
   </div>
 </template>
 
@@ -15,6 +15,22 @@ export default {
   components: {
     PageHeader,
     NewProjectForm,
+  },
+  data() {
+    return {
+      newproject: [
+          { value: null, text: ' ' },
+          { value: 'a', text: 'Roman' },
+          { value: 'b', text: 'Nouvelle' },
+          { value: 'c', text: 'Scénario'},
+          { value: 'd', text: 'Chanson'},
+          { value: 'e', text: 'Autre...', disabled: true }
+        ],
+        chap: [
+          { text: 'Oui', value: 'oui' },
+          { text: 'Non', value: 'non' },
+        ],
+    }
   }
 }
 </script>

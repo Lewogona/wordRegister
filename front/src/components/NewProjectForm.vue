@@ -2,7 +2,7 @@
     <div>
       <b-form>
         <b-form-group label="Quel type de projet ?">
-          <b-form-select class="form" :options="newprojets"></b-form-select>  
+          <b-form-select class="form" :options="newproject"></b-form-select>  
         </b-form-group>
         <b-form-group label="Titre :">
           <b-form-input class="form"></b-form-input>
@@ -22,20 +22,12 @@
   <script>
   export default {
     name: 'NewProjectForm',
+    props: {
+      newproject: Array,
+      chap: Array,
+    },
     data() {
       return {
-        newprojets: [
-          { value: null, text: ' ' },
-          { value: 'a', text: 'Roman' },
-          { value: 'b', text: 'Nouvelle' },
-          { value: 'c', text: 'Scénario'},
-          { value: 'd', text: 'Chanson'},
-          { value: 'e', text: 'Autre...', disabled: true }
-        ],
-        chap: [
-          { text: 'Oui', value: 'oui' },
-          { text: 'Non', value: 'non' },
-        ],
       }
     }
   }

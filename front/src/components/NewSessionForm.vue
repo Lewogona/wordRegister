@@ -32,14 +32,8 @@
     },
     data() {
       return {
-        // projects: [],
-        // events: [],
-        // newchap: [],
       }
     },
-    mounted() {
-      console.log(this.projects)
-    }
   }
   </script>
   
