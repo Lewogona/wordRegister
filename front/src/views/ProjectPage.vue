@@ -1,12 +1,22 @@
 <template>
   <div class="home">
     <PageHeader />
-    <ProjectInfo :title="title" :projectType="projectType" :description="description" :finishedChapter="finishedChapter" />
+    <ProjectInfo 
+    :id="project.id"
+    :title="project.title" 
+    :type="project.type" 
+    :description="project.description" 
+    :genre="project.genre"
+    :theme="project.theme"
+    :logline="project.logline"
+    :finishedChapters="project.finishedChapters" />
     <ProjectStatistics />
   </div>
 </template>
   
 <script>
+import axios from "../services/axios-service"
+
 // @ is an alias to /src
 import PageHeader from '@/components/PageHeader.vue'
 import ProjectInfo from '@/components/ProjectInfo.vue'
@@ -21,11 +31,17 @@ export default {
   },
   data() {
     return {
-      title: 'Cette fille',
-      projectType: 'Roman',
-      description: 'Description, thèmes, logline, blabla...',
-      finishedChapter: 12,
+      project: {},
     }
+  },
+  created() {
+    // Get the project with its id
+    axios.get("projects/" + this.$route.params.id)
+      .then(response => {
+        this.project = response.data;
+      }).catch(e => {
+        console.error(e);
+      })
   },
   mounted() {
     // The user has to be logged in to access this page

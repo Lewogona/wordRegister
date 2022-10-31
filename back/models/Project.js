@@ -5,6 +5,8 @@ const projectSchema = mongoose.Schema({
   title: {type: String, required: true},
   type: {type: String, required: true},
   chapter: {type: Boolean, required: true},
+  chapters: {type: Array, required: false},
+  finishedChapters: {type: Number, required: false},
   description: {type: String, required: false},
   genre: {type: String, required: false},
   theme: {type: String, required: false},

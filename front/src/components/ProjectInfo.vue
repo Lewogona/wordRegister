@@ -2,15 +2,24 @@
   <div>
     <b-card :title="title" tag="article" class="project_card">
       <b-card-text>
-        Type de projet : {{ projectType }}
+        Type de projet : {{ type }}
       </b-card-text>
       <b-card-text>
-        {{ description }}
-      </b-card-text>      
-      <b-card-text v-if="displayOnProjectPage">
-        Chapitres finis : {{ finishedChapter }}
+        Description : {{ description }}
       </b-card-text>
-      <b-button href="#/project" v-if="displayOnAllProject" variant="primary" size="sm" class="button_card stretched-link">Plus de détails</b-button>
+      <b-card-text v-if="displayOnProjectPage">
+        Genre : {{ genre }}
+      </b-card-text>
+      <b-card-text v-if="displayOnProjectPage">
+        Thèmes : {{ theme }}
+      </b-card-text>
+      <b-card-text v-if="displayOnProjectPage">
+        Logline : {{ logline }}
+      </b-card-text> 
+      <b-card-text v-if="displayOnProjectPage">
+        Chapitres finis : {{ finishedChapters }}
+      </b-card-text>
+      <b-button @click="goToProjectPage" v-if="displayOnAllProject" variant="primary" size="sm" class="button_card stretched-link">Plus de détails</b-button>
     </b-card>
   </div>
 </template>
@@ -20,9 +29,13 @@
     name: 'ProjectInfo',
     props: {
       title: String,
-      projectType: String,
+      type: String,
       description: String,
-      finishedChapter: Number,
+      genre: String,
+      theme: String,
+      logline: String,
+      finishedChapters: Number,
+      id: String,
     },
     data() {
       return {
@@ -35,7 +48,13 @@
       displayOnAllProject() {
         return ["/allprojects"].includes(this.$router.currentRoute.path)
       },
-    }
+    },
+    methods: {
+      //go to the project page
+      goToProjectPage() {
+        this.$router.push(`/project/${this.id}`)
+      }
+    },
   }
 </script>
     

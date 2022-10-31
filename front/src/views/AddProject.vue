@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
-    <NewProjectForm :newproject="newproject" :chap="chap" />
+    <NewProjectForm :projectType="projectType" :chap="chap" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      newproject: [
+      projectType: [
           { value: null, text: ' ' },
           { value: 'roman', text: 'Roman' },
           { value: 'nouvelle', text: 'Nouvelle' },

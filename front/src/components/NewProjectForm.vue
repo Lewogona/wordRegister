@@ -1,16 +1,19 @@
 <template>
   <div>
     <b-form @submit.prevent="sendProject">
-      <b-form-group label="Titre :">
+      <b-form-group label="Titre :*">
         <b-form-input type="text" v-model="title" class="form" required></b-form-input>
       </b-form-group>
-      <b-form-group label="Quel type de projet ?">
-        <b-form-select class="form" :options="newproject" v-model="type" required></b-form-select>  
+      <b-form-group label="Quel type de projet :*">
+        <b-form-select class="form" :options="projectType" v-model="type" required></b-form-select>  
       </b-form-group>
-      <b-form-group label="Y aura-t-il des chapitres ? (différents fichiers)">
+      <b-form-group label="Y aura-t-il des chapitres ? (différents fichiers)*">
         <b-form-radio-group name="chap" :options="chap" v-model="chapter" buttons button-variant="outline-primary" size="lg" required></b-form-radio-group>
+      </b-form-group>      
+      <b-form-group label="Nombre de chapitres finis :" v-if="chapter">
+        <b-form-input type="number" v-model="finishedChapters" class="form"></b-form-input>
       </b-form-group>
-      <b-form-group label="Ajouter une description ?">
+      <b-form-group label="Ajouter une description :">
         <b-form-textarea v-model="description" class="form"></b-form-textarea>
       </b-form-group>
       <b-form-group label="Genre :">
@@ -36,7 +39,7 @@
   export default {
     name: 'NewProjectForm',
     props: {
-      newproject: Array,
+      projectType: Array,
       chap: Array,
     },
     data() {
@@ -45,6 +48,7 @@
         title: "",
         type: "",
         chapter: undefined,
+        finishedChapters: NaN,
         description: "",
         genre: "",
         theme: "",
@@ -59,7 +63,7 @@
       }
     },
     methods: {
-      //
+      //validate form and redirect
       redirection() {
         this.$router.push("/allprojects")
       },

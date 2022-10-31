@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import axios from "../services/axios-service"
+
 // @ is an alias to /src
 import PageHeader from '@/components/PageHeader.vue'
 import NewSessionForm from '@/components/NewSessionForm.vue'
@@ -18,25 +20,28 @@ export default {
   },
   data() {
     return{
-      projects: [
-          { value: null, text: ' ' },
-          { value: 'a', text: '[Roman] Cette fille' },
-          { value: 'b', text: '[Roman] Ossaïnha' },
-          { value: 'c', text: '[Nouvelle] À travers la fenêtre'},
-          { value: 'd', text: 'Autre...', disabled: true }
-        ],
-        events: [
-          { value: null, text: ' ' },
-          { value: 'a', text: 'Session normale' },
-          { value: 'b', text: 'Word war 15' },
-          { value: 'c', text: 'Word war 30' },
-          { value: 'd', text: 'Autre...', disabled: true }
-        ],
-        newchap: [
-          { text: 'Oui', value: 'oui' },
-          { text: 'Non', value: 'non' },
-        ],
+      projects: [],
+      events: [
+        { value: null, text: ' ' },
+        { value: 'normalsession', text: 'Session normale' },
+        { value: 'ww15', text: 'Word war 15' },
+        { value: 'ww30', text: 'Word war 30' },
+        { value: 'd', text: 'Autre...', disabled: true }
+      ],
+      newchap: [
+        { text: 'Oui', value: true },
+        { text: 'Non', value: false },
+      ],
     }
+  },
+  created() {
+    // Get all projects
+    axios.get("projects")
+      .then(response => {
+        this.projects.push(...response.data);
+      }).catch(e => {
+        console.error(e);
+      });
   },
   mounted() {
     // The user has to be logged in to access this page

@@ -61,7 +61,7 @@ const routes = [
     component: NanoGraphics
   },  
   {
-    path: '/project',
+    path: '/project/:id',
     name: 'project',
     component: ProjectPage
   },
