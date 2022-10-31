@@ -74,6 +74,7 @@
           title: this.title,
           type: this.type,
           chapter: this.chapter,
+          finishedChapters: this.finishedChapters,
           description: this.description,
           genre: this.genre,
           theme: this.theme,

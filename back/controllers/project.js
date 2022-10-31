@@ -3,6 +3,7 @@ const Project = require("../models/Project");
 // Create a new project
 exports.createProject = (req, res) => {
   // Retrieve data from the request and create a new instance of project
+  req.body.chapters = req.body.finishedChapters ? Array(parseInt(req.body.finishedChapters)).fill('0') : [];
   const project = new Project({ ...req.body });
   // Save the new project into database
   project.save()
@@ -37,7 +38,6 @@ exports.modifyProject = (req, res) => {
       }
 
       if (project.chapters.length < req.body.chapter) {
-        console.log('je suis ici')
         project.chapters.push(req.body.totalFileWord)
       } else {
         project.chapters[req.body.chapter] = req.body.totalFileWord;
