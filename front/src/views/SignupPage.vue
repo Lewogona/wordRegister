@@ -51,7 +51,7 @@ export default {
   methods : {
     // Check if every input is valid
     validateForm() {
-    const validatePseudo = this.validateInput("pseudo", /^[A-zÀ-ú- ]+$/, "Pseudo");
+    const validatePseudo = this.validateInput("pseudo", /^[A-zÀ-ú-0-9]+$/, "Pseudo");
     const validatePassword = this.validateInput("password", /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, "Mot de passe");
 
     return validatePseudo && validatePassword
