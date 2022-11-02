@@ -19,7 +19,9 @@
       <b-card-text v-if="displayOnProjectPage">
         Chapitres finis : {{ finishedChapters }}
       </b-card-text>
-      <b-button @click="goToProjectPage" v-if="displayOnAllProject" variant="primary" size="sm" class="button_card stretched-link">Plus de détails</b-button>
+      <b-button @click="goToProjectPage" v-if="displayOnAllProject" variant="primary" size="sm" class="right stretched-link">Plus de détails</b-button>
+      <b-button v-if="displayOnProjectPage" variant="danger" size="sm" class="right" style="margin-top: 15px;">Supprimer</b-button>
+      <b-button v-if="displayOnProjectPage" variant="primary" size="sm" class="right" style="margin-top: 15px; margin-right: 5px;">Modifier</b-button>
     </b-card>
   </div>
 </template>
@@ -68,7 +70,7 @@
   margin-bottom: 10px;
 }
 
-.button_card {
+.right {
   float: right;
 }
 </style>
