@@ -93,7 +93,7 @@
           totalSessionWord: this.sessionWord,
         })
 
-        await axios.put("projects/" + this.projectId, {
+        await axios.put("projects/chapter/" + this.projectId, {
           chapter: this.chapter,
           totalFileWord: this.totalFileWord,
         })

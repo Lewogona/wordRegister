@@ -29,8 +29,8 @@
         </b-col>
         <b-col md="7" lg="8" xl="9">
           <b-card-text class="my-3 black">Pseudo : {{ pseudo }}</b-card-text>
-          <b-card-text class="my-3 black">Nombre de projets : {{ projectNumber }}</b-card-text>
-          <b-card-text class="my-3 black">Nombre total de mots : {{ totalWord }}</b-card-text>
+          <b-card-text class="my-3 black">Nombre de projets : {{ numberOfProjects }}</b-card-text>
+          <b-card-text class="my-3 black">Nombre total de mots : {{ totalNano }}</b-card-text>
         </b-col>
       </b-row>
     </b-card>
@@ -47,8 +47,8 @@
     },
     props: {
       pseudo: String,
-      projectNumber: Number,
-      totalWord: Number,
+      numberOfProjects: Number,
+      totalNano: Number,
     },
     data() {
       return {

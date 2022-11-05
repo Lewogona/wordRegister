@@ -23,7 +23,7 @@
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown text="Mon compte" right>
-          <b-dropdown-item href="#/userpage">Profil</b-dropdown-item>
+          <b-dropdown-item :href="`#/userpage/${currentUser.userId}`">Profil</b-dropdown-item>
           <b-dropdown-item @click="logOut">Déconnexion</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

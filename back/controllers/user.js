@@ -42,3 +42,10 @@ exports.login = (req, res, next) => {
     })
     .catch(error => res.status(500).json({ error }));
 };
+
+// Get one user using their user id
+exports.getOneUser = async (req, res) => {
+  User.findOne({ userId: req.auth.userId })
+    .then(user => res.status(200).json(user))
+    .catch(error => res.status(404).json({ error }));
+}

@@ -11,6 +11,7 @@ import ProjectPage from '../views/ProjectPage'
 import UserPage from '../views/UserPage'
 import LoginPage from '../views/LoginPage'
 import SignupPage from '../views/SignupPage'
+import ModifyProject from '../views/ModifyProject'
 
 Vue.use(VueRouter)
 
@@ -66,9 +67,14 @@ const routes = [
     component: ProjectPage
   },
   {
-    path: '/userpage',
+    path: '/userpage/:id',
     name: 'userpage',
     component: UserPage
+  },
+  {
+    path: '/modifyproject/:id',
+    name: 'modifyproject',
+    component: ModifyProject
   },
 ]
 

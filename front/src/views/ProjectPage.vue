@@ -8,8 +8,7 @@
     :description="project.description" 
     :genre="project.genre"
     :theme="project.theme"
-    :logline="project.logline"
-    :finishedChapters="project.finishedChapters" />
+    :logline="project.logline" />
     <ProjectStatistics />
   </div>
 </template>

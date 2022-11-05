@@ -4,6 +4,7 @@ const Project = require("../models/Project");
 exports.createProject = (req, res) => {
   // Retrieve data from the request and create a new instance of project
   req.body.chapters = req.body.finishedChapters ? Array(parseInt(req.body.finishedChapters)).fill('0') : [];
+  delete req.body.finishedChapters
   const project = new Project({ ...req.body });
   // Save the new project into database
   project.save()
@@ -12,8 +13,10 @@ exports.createProject = (req, res) => {
 };
 
 // Get all projects in database
-exports.getAllProjects = (req, res) => {
-  Project.find()
+exports.getAllProjectsOfOneUser = (req, res) => {
+  Project.find({
+    userId: req.auth.userId,
+  })
     .then(project => res.status(200).json(project))
     .catch(error => res.status(400).json({error}));
 };
@@ -26,7 +29,7 @@ exports.getOneProject = (req, res) => {
 };
 
 // Modify the project info
-exports.modifyProject = (req, res) => {
+exports.modifyProjectChapter = (req, res) => {
   // Find if project exists with the its ID
   Project.findOne({ _id: req.params.id })
     .then((project) => {
@@ -43,6 +46,24 @@ exports.modifyProject = (req, res) => {
         project.chapters[req.body.chapter] = req.body.totalFileWord;
       }
       Project.updateOne({ _id: req.params.id }, { chapters: project.chapters })
+        .then(() => res.status(200).json({ message: "Chapitres du projet modifiés !" }))
+        .catch(error => res.status(403).json({ error }));
+    })
+    .catch(error => res.status(500).json({ error }));   
+}
+
+// Modify the project info
+exports.modifyProject = (req, res) => {
+  // Find if project exists with the its ID
+  Project.findOne({ _id: req.params.id })
+    .then((project) => {
+      if (!project) {
+        return res.status(404).json({ error: "Projet non trouvée !" })
+      }
+      if (project.userId !== req.auth.userId) {
+        return res.status(401).json({ error: "Requête non autorisée !" })
+      }
+      Project.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
         .then(() => res.status(200).json({ message: "Projet modifié !" }))
         .catch(error => res.status(403).json({ error }));
     })

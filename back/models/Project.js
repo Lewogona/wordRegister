@@ -6,7 +6,6 @@ const projectSchema = mongoose.Schema({
   type: {type: String, required: true},
   chapter: {type: Boolean, required: true},
   chapters: {type: Array, required: false},
-  finishedChapters: {type: Number, required: false},
   description: {type: String, required: false},
   genre: {type: String, required: false},
   theme: {type: String, required: false},
