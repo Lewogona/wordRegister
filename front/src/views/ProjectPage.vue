@@ -2,16 +2,15 @@
   <div class="home">
     <PageHeader />
     <ProjectInfo 
-    :id="project.id"
-    :title="project.title" 
-    :type="project.type" 
-    :description="project.description" 
-    :genre="project.genre"
-    :theme="project.theme"
-    :logline="project.logline" 
-    :numberOfChapters="(project.chapters && project.chapters.length) || 0"
-    :displayDeleteMessage="displayDeleteMessage" />
-    <ProjectStatistics />
+      :id="project.id"
+      :title="project.title" 
+      :type="project.type" 
+      :description="project.description" 
+      :genre="project.genre"
+      :theme="project.theme"
+      :logline="project.logline" 
+      :numberOfChapters="(project.chapters && project.chapters.length) || 0"
+      :displayDeleteMessage="displayDeleteMessage" />
     <b-modal 
       ref="confirm" 
       id="modal-1" 
@@ -28,14 +27,12 @@ import axios from "../services/axios-service"
 // @ is an alias to /src
 import PageHeader from '@/components/PageHeader.vue'
 import ProjectInfo from '@/components/ProjectInfo.vue'
-import ProjectStatistics from '@/components/ProjectStatistics.vue'
 
 export default {
   name: 'AddProject',
   components: {
     PageHeader,
     ProjectInfo,
-    ProjectStatistics,
   },
   data() {
     return {

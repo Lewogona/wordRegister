@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
+    <ProjectStatistics />
   </div>
 </template>
 
@@ -8,10 +9,13 @@
 // @ is an alias to /src
 import PageHeader from '@/components/PageHeader.vue'
 
+import ProjectStatistics from '@/components/ProjectStatistics.vue'
+
 export default {
   name: 'NanoGraphics',
   components: {
     PageHeader,
+    ProjectStatistics
   },
   mounted() {
     // The user has to be logged in to access this page

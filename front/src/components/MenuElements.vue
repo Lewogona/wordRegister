@@ -23,7 +23,7 @@
         <b-icon-book font-scale="5" variant="primary"></b-icon-book>
         <p>Projets</p>
       </b-link>
-      <b-link href="#/nanographics" class="menu-elements" disabled>
+      <b-link href="#/nanographics" class="menu-elements">
         <b-icon-pie-chart-fill font-scale="5"></b-icon-pie-chart-fill>
         <p>Graphiques</p>
       </b-link>
