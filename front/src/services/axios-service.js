@@ -2,7 +2,7 @@ import axios from "axios"
 
 // Add baseURL to avoid repetition
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "http://87.90.241.191:4321/",
   params: {}
 });
 
