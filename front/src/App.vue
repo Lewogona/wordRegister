@@ -29,7 +29,7 @@ a {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -62,5 +62,11 @@ input:read-only {
 
 .black {
   color: black;
+}
+
+h1 {
+ font-family: Georgia;
+ font-size: 36px;
+ margin-bottom: 20px;
 }
 </style>

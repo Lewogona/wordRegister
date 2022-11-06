@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
+    <h1>Ajouter un nouveau projet</h1>
     <NewProjectForm :projectType="projectType" :chap="chap" />
   </div>
 </template>

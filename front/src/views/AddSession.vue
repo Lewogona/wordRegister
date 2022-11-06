@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
+    <h1>Ajouter une nouvelle session</h1>
     <NewSessionForm :projects="projects" :events="events" :newchap="newchap" />
   </div>
 </template>

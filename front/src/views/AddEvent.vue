@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
+    <h1>Ajouter un nouvel évènement</h1>
   </div>
 </template>
 

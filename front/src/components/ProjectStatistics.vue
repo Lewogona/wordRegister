@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="statistiques" class="project_card">
-      <h1>Statistiques</h1>
+      <h2>Statistiques</h2>
     </div>
   </div>
 </template>

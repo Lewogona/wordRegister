@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <PageHeader />
+    <h1>Modifier un projet</h1>
     <NewProjectForm :projectType="projectType" :chap="chap" :project="project" />
   </div>
 </template>
