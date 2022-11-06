@@ -69,3 +69,23 @@ exports.modifyProject = (req, res) => {
     })
     .catch(error => res.status(500).json({ error }));   
 }
+
+// Delete project
+exports.deleteProject = (req, res, next) => {
+  // Find if project exists with the project ID
+  Project.findOne({ _id: req.params.id })
+    .then((project) => {
+      if (!project) {
+        return res.status(404).json({ error: "Projet non trouvée !" })
+      }
+      if (project.userId !== req.auth.userId) {
+        return res.status(401).json({ error: "Requête non autorisée !" })
+      }
+      
+      // Delete the project
+      Project.deleteOne({ _id: req.params.id })
+        .then(() => res.status(200).json({ message: "Projet supprimée !"}))
+        .catch(error => res.status(400).json({ error }));
+    })
+    .catch(error => res.status(500).json({ error }));
+};

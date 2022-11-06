@@ -8,8 +8,17 @@
     :description="project.description" 
     :genre="project.genre"
     :theme="project.theme"
-    :logline="project.logline" />
+    :logline="project.logline" 
+    :numberOfChapters="(project.chapters && project.chapters.length) || 0"
+    :displayDeleteMessage="displayDeleteMessage" />
     <ProjectStatistics />
+    <b-modal 
+      ref="confirm" 
+      id="modal-1" 
+      title="Confirmer la suppression du projet ?"
+      @ok="deleteProject">
+      <p class="my-4">Attention : tout projet supprimé ne pourra pas être récupéré.</p>
+    </b-modal>
   </div>
 </template>
   
@@ -54,6 +63,17 @@ export default {
       return this.$store.state.auth.user;
     }
   },
+  methods: {
+    // Display the confirmation modal
+    displayDeleteMessage() {
+      this.$refs["confirm"].toggle()
+    },
+    // Delete a user using their id and redirect to signup page after clearing the localStorage
+    async deleteProject() {
+      await axios.delete("projects/" + this.$route.params.id);
+      this.$router.push("/allprojects");
+    }
+  }
 }
   </script>
   

@@ -16,11 +16,11 @@
       <b-card-text v-if="!displayOnAllProject">
         Logline : {{ logline }}
       </b-card-text> 
-      <!-- <b-card-text v-if="!displayOnAllProject">
-        Chapitres : {{ finishedChapters }}
-      </b-card-text> -->
+      <b-card-text v-if="!displayOnAllProject">
+        Nombre de chapitres : {{ numberOfChapters }}
+      </b-card-text>
       <b-button @click="goToProjectPage" v-if="displayOnAllProject" variant="primary" size="sm" class="right stretched-link">Plus de détails</b-button>
-      <b-button v-if="!displayOnAllProject" variant="danger" size="sm" class="right" style="margin-top: 15px;">Supprimer</b-button>
+      <b-button @click="displayDeleteMessage" v-if="!displayOnAllProject" variant="danger" size="sm" class="right" style="margin-top: 15px;">Supprimer</b-button>
       <b-button :href="`#/modifyproject/${$route.params.id}`" v-if="!displayOnAllProject" variant="primary" size="sm" class="right" style="margin-top: 15px; margin-right: 5px;">Modifier</b-button>
     </b-card>
   </div>
@@ -36,8 +36,9 @@
       genre: String,
       theme: String,
       logline: String,
-      // finishedChapters: Number,
+      numberOfChapters: Number,
       id: String,
+      displayDeleteMessage: Function,
     },
     data() {
       return {
@@ -49,6 +50,10 @@
       },
     },
     methods: {
+      // Retrieve the user with their info
+      currentUser() {
+        return this.$store.state.auth.user;
+      },
       //go to the project page
       goToProjectPage() {
         this.$router.push(`/project/${this.id}`)
