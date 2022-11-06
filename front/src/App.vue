@@ -35,11 +35,12 @@ a {
   text-align: center;
   background-color: white;
   margin: auto;
-  height: 100%;
+  height: auto;
   width: 100%;
     @include media-breakpoint-up(xl) {
         width: 980px;
     }
+  padding-bottom: 20px;
 }
 
 a:hover.disabled {
